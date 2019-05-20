@@ -1,6 +1,6 @@
 This is a solution for building .epub and .mobi from sources of 'The Rust Programming Language'
 
-This is inspired by https://github.com/abcdev/trpl-ebook/blob/restructure/, but instead of using trpl-eb ook, I decided to use well know, old & maintained for years tools such as:
+This is inspired by https://github.com/abcdev/trpl-ebook/blob/restructure/, but instead of using [trpl-ebook](https://github.com/killercup/trpl-ebook), I decided to use tools such as:
 - pandoc
 - calibre
 
