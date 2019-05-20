@@ -11,7 +11,7 @@ type in `make trpl` to get an epub version of the book build from the newest sou
 ### Future
 
 Ideally I would like to:
- - [ ] generate .mobi files
+ - [x] generate .mobi files
  - [ ] generate other books for Rustaceans (wasm book, embedded rust...)
  - [ ] get rid of Ubuntu as the base image, and use something smaller (Alpine? NixOS?)
  

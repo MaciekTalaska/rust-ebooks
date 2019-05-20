@@ -5,5 +5,11 @@ DIST_DIR=/trpl-ebook/dist
 build:
 	docker build -t trpl-ebook -f Dockerfile .
 
-trpl: build
+trplmobi: build
+	docker cp $(shell docker ps -alq):/trpl-book/src/trpl-book.mobi .
+
+trplepub: build
 	docker cp $(shell docker ps -alq):/trpl-book/src/trpl-book.epub .
+
+trpl:	build trplmobi trplepub
+	echo "done!"
