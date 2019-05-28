@@ -3,10 +3,9 @@ build:
 
 mobi: build epub 
 	docker run -dt trpl-ebook
-	docker exec `docker ps -alq` sh -c "mkdir /trpl-book && mkdir /trpl-book/src"
-	docker cp trpl-book.epub `docker ps -alq`:/trpl-book/src/trpl-book.epub
-	docker exec `docker ps -alq` sh -c "ebook-convert /trpl-book/src/trpl-book.epub /trpl-book/src/trpl-book.mobi"
-	docker cp `docker ps -alq`:/trpl-book/src/trpl-book.mobi .
+	docker cp trpl-book.epub `docker ps -alq`:/trpl-book.epub
+	docker exec `docker ps -alq` sh -c "ebook-convert /trpl-book.epub /trpl-book.mobi"
+	docker cp `docker ps -alq`:/trpl-book.mobi .
 	docker stop `docker ps -alq`
 
 epub: build 
