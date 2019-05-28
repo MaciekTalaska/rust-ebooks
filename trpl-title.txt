@@ -1,0 +1,6 @@
+--
+title: The Rust Programming Language
+author: Steve Klabnik and Carol Nichols and Rust community
+rights: MIT 
+language: en-US
+...
