@@ -9,7 +9,7 @@ mobi: build epub
 	docker stop `docker ps -alq`
 
 epub: build 
-	docker run -dt -v `pwd`/book:/book trpl-ebook 
+	docker run -dt trpl-ebook 
 	docker cp ./build_epub.sh  `docker ps -alq`:/ 
 	docker exec `docker ps -alq` sh -c "./build_epub.sh"
 	docker cp `docker ps -alq`:/trpl-book/src/trpl-book.epub .
