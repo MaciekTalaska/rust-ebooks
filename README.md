@@ -28,10 +28,12 @@ I will try to fix the issues listed above, but this is not top priority for me -
 ### Alternatives
 
 For other Rust books you should definitely check:
+* [ebookmaker](https://github.com/setanta/ebookmaker/)
 * [trpl-ebook](https://github.com/killercup/trpl-ebook) (check forks of the project as well)
 * [mdbookshelf](https://github.com/rams3s/mdbookshelf) (this project is based on `mdbook-epub`, which has the following problems:
   - graphics/images are not all embedded into the final epub
   - tables are not converted correctly
+  - only .epub files are produced, so conversion to mobi (if needed) is something you have to deal with yourself
   - there is no code syntax highlights)
 
 ### How to generate other books (easily) using `rust-ebooks`?
@@ -41,4 +43,3 @@ Examine the content of the `build_epub.sh` file. Most probably slight changes wi
 2) provide proper list of markdown files to pandoc
 
 In case you have to create ebook from a book written in HTML - this should also be similar, but please bear in mind that HTML version of books often have menus etc, sidebar navigation etc. - which you probably want to get rid if first when preparing your ebook. 
-
