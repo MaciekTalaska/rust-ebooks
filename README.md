@@ -8,26 +8,31 @@ I just needed the ebook generated from the very latest sources of the book. I co
 
 ### Usage
 
-Depending on the destination format type:
-* `make epub` - if you need only .epub file
-* `make mobi` - this will generate both: epub & mobi (as epub is just first, required step to make a mobi file)
+Targets in `Makefile` should be self-explanatory, but just for the sake of completeness of this doc:
 
-### Known limiations
+- `build` is responsible for downloading Ubuntu image, installing pandoc, calibre, git, additional fonts - everything that is needed for the creation of epub and converting it later to mobi.
 
-1. Due to the way Pandoc works links between chapters are not working. The original table of content also doesnt work ;/
-2. Some tables are not looking that well as in html version
-3. It seems that listings are missing 'ferris' icons ;(
+- `epub` depends on `build` and as a result should crate `trpl-book.epub` file in the directory where the `Makefile` is located
 
-I will try to fix the issues listed above, but this project is not the top of my priority.
+- `mobi` depends on `epub` and takes the generated .epub file and converts it to a mobi file
+
+### Known limiations/problems
+
+1. Due to the way Pandoc works links between chapters are not working. 
+2. The original table of content does not work (pandoc is capable of generating automatic ToC - use `--toc` option to achieve that) 
+3. Some tables are not looking as nice as in HTML version of the book 
+4. It seems that listings (some? all? I haven't checked) are missing 'ferris icons' ;(
+
+I will try to fix the issues listed above, but this is not top priority for me - I wanted to be able to read the latest TRPL on ebook reader and I am pretty happy with what I have achieved.
 
 ### Alternatives
 
 For other Rust books you should definitely check:
 * [trpl-ebook](https://github.com/killercup/trpl-ebook) (check forks of the project as well)
 * [mdbookshelf](https://github.com/rams3s/mdbookshelf) (this project is based on `mdbook-epub`, which has the following problems:
-- graphics/images are not all embedded into the final epub
-- tables are not converted correctly
-- there is no code syntax highlights)
+  - graphics/images are not all embedded into the final epub
+  - tables are not converted correctly
+  - there is no code syntax highlights)
 
 ### How to generate other books (easily) using `rust-ebooks`?
 
