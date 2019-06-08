@@ -14,9 +14,9 @@ Targets in `Makefile` should be self-explanatory, but just for the sake of compl
 
 - `build` just pulls prebuilt image (containing all necessary tools) from Dockerhub
 
-- `epub` depends on `build` and as a result should crate `trpl-book.epub` file in the directory where the `Makefile` is located
+- `epub` depends on `build` and as a result should crate `trpl.epub` file in the directory where the `Makefile` is located
 
-- `mobi` depends on `epub` and takes the generated .epub file and converts it to a mobi file
+- `mobi` depends on `epub` and takes the generated .epub file and converts it to a mobi file. The result are both: `trpl.epub` and `trpl.mobi` files in the current directory you invoked `make mobi`
 
 ### Known limiations/problems
 
