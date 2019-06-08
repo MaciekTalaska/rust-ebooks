@@ -1,17 +1,17 @@
 build:
-	docker build -t trpl-ebook -f Dockerfile .
+	docker build -t rust-ebook -f Dockerfile .
 
 mobi: build epub 
-	docker run -dt trpl-ebook
-	docker cp trpl-book.epub `docker ps -alq`:/trpl-book.epub
-	docker exec `docker ps -alq` sh -c "ebook-convert /trpl-book.epub /trpl-book.mobi"
-	docker cp `docker ps -alq`:/trpl-book.mobi .
+	docker run -dt rust-ebook
+	docker cp trpl.epub `docker ps -alq`:/trpl.epub
+	docker exec `docker ps -alq` sh -c "ebook-convert /trpl.epub /trpl.mobi"
+	docker cp `docker ps -alq`:/trpl.mobi .
 	docker stop `docker ps -alq`
 
 epub: build 
-	docker run -dt trpl-ebook 
+	docker run -dt rust-ebook 
 	docker cp ./build_epub.sh  `docker ps -alq`:/ 
 	docker exec `docker ps -alq` sh -c "./build_epub.sh"
-	docker cp `docker ps -alq`:/trpl-book/src/trpl-book.epub .
+	docker cp `docker ps -alq`:/book/src/trpl.epub .
 	docker stop `docker ps -alq`
 
