@@ -1,5 +1,6 @@
 build:
-	docker build -t rust-ebook -f Dockerfile .
+	docker pull maciektalaska/rust-ebook
+	docker tag maciektalaska/rust-ebook rust-ebook
 
 mobi: build epub 
 	docker run -dt rust-ebook

@@ -6,11 +6,13 @@ This is inspired by https://github.com/abcdev/trpl-ebook/blob/restructure/, but 
 
 I just needed the ebook generated from the very latest sources of the book. I could do it manually, but I decided to automate the task a bit.
 
+This is based on an image [rust-ebooks-image](https://github.com/MaciekTalaska/rust-ebook-image) which is also [available to pull directly from Dockerhub](https://hub.docker.com/r/maciektalaska/rust-ebook).
+
 ### Usage
 
 Targets in `Makefile` should be self-explanatory, but just for the sake of completeness of this doc:
 
-- `build` is responsible for downloading Ubuntu image, installing pandoc, calibre, git, additional fonts - everything that is needed for the creation of epub and converting it later to mobi.
+- `build` just pulls prebuilt image (containing all necessary tools) from Dockerhub
 
 - `epub` depends on `build` and as a result should crate `trpl-book.epub` file in the directory where the `Makefile` is located
 
